@@ -29,10 +29,12 @@ takeways/challenges:
 
 *Rendering:*
 
-- In thee.js we render points in batches using the Points class. We can discard points (using a global clipping plane etc) if they are not within a geographical point of interest, or denude (i.e. decrease the density of) the points rendered within the fragment shader if it is not directly within the viewer's focus. We can additionally assign the points to different rendering layers, and selectively render layers. This would probably be useful if the gltf meshes were semantically tagged during the preprocessing phase, so we could explicitly assign the 'roof' to layer 1, walls to layer 2 etc. We can alter the appearance of the points in custom frag/vert shaders, but it is probably most efficient to use postprocessing effects to drive ui.
+- In thee.js we render points in batches using the Points class. We can discard points (using a global clipping plane etc) if they are not within a geographical point of interest, or denude (i.e. decrease the density of) the points rendered within the fragment shader if it is not directly within the viewer's focus. We can additionally assign the points to different rendering layers, and selectively render layers. This would probably be useful if the gltf meshes were semantically tagged during the preprocessing phase, so we could explicitly assign the 'roof' to layer 1, walls to layer 2 etc. We can alter the appearance of the points in custom frag/vert shaders, but it is probably most efficient to use postprocessing effects to drive ui. 
 
 *Raycasting*:
 
 - Raycasting is quite challenging on pointclouds. The effect is less obvious when only using one raycaster, but becomes evident if we are doing things like collision detection, where several raycasters are required. We can use spatial query libraries, and special data structures (such as octrees) to improve their efficacy. If using WebGPU, you could implement a raycaster on the GPU using compute shaders. When creating a 3D measuring tool, the real difficulty is enabling a user to click on points which they are likely to want to measure from. As discussed above, a potential solution is to create a low poly convex hull from the pointcloud, and use this to drive ui/interaction.
+
+
 
 
