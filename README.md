@@ -2,6 +2,10 @@
 Clone the repo and run `yarn install`
 After the successfull installation of the packages: `yarn dev`
 
+⌛ Health warning: Slow app performance; poorly optimised!
+I somewhat regret using react-three-fiber as a react-reconciler for three.js. Three.js already operates in a somewhat magical way, and the additional layer of abstraction does little to help this. Would love to know of ideas on dynamically updating uniforms to shaders...
+
+
 
 Map Controls
 - right click and drag to pan
