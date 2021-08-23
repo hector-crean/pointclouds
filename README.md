@@ -37,7 +37,7 @@ takeways/challenges:
 
 *Raycasting*:
 
-- Raycasting is quite challenging on pointclouds. The effect is less obvious when only using one raycaster, but becomes evident if we are doing things like collision detection, where several raycasters are required. We can use spatial query libraries, and special data structures (such as octrees) to improve their efficacy. If using WebGPU, you could implement a raycaster on the GPU using compute shaders. When creating a 3D measuring tool, the real difficulty is enabling a user to click on points which they are likely to want to measure from. As discussed above, a potential solution is to create a low poly convex hull from the pointcloud, and use this to drive ui/interaction.
+- Raycasting is quite challenging on pointclouds. The effect is less obvious when only using one raycaster, but becomes evident if we are doing things like collision detection, where several raycasters are required. We can use spatial query libraries, and special data structures (such as octrees) to improve their efficacy. If using WebGPU, you could implement a raycaster on the GPU using compute shaders. When creating a 3D measuring tool, the real difficulty is enabling a user to click on points which they are likely to want to measure from. As discussed above, a potential solution is to create a low poly convex hull from the pointcloud, and use this to drive ui/interaction. Additionally, raycasting is more naturally defined (within three.js) for collision with a 'ponts' object, rather than an individual point. A pointcloud will have several hundred/thousand 'points' objects, which in turn each have several hundred points. It's somewhat more tricly to implement raycasting for an individual point. 
 
 
 
