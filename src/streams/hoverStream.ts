@@ -6,8 +6,6 @@
  * Through a series of stream transformations, a new stream can be calculated with the
  * current hover state that takes 3d properly into account.
  * 
- * I've decided not to use this here but worth leaving it just to document the thought process:
-
  */
  import { omit } from "ramda";
  import type { Stream } from "xstream";
